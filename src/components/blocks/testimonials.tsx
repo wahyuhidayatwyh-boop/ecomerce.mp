@@ -13,7 +13,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 const items = [
   {
@@ -124,7 +124,7 @@ export const Testimonials = ({
                       <CardContent className="flex h-full flex-col p-0">
                         <div className="relative h-[288px] lg:h-[328px]">
                           <Image
-                            src={testimonial.image}
+                            src={withBasePath(testimonial.image)}
                             alt={testimonial.author}
                             fill
                             className="object-cover object-top"

@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { withBasePath } from "@/lib/utils";
+
 const investors = [
   {
     name: "Dennis Bouvard",
@@ -38,7 +40,7 @@ export function Investors() {
         {investors.map((investor) => (
           <div key={investor.name} className="">
             <Image
-              src={investor.image}
+              src={withBasePath(investor.image)}
               alt={investor.name}
               width={120}
               height={120}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { withBasePath } from "@/lib/utils";
 
 const portfolioItems = [
   {
@@ -70,7 +71,7 @@ export function PortfolioCards() {
                 <CardContent className="p-0">
                   <div className="relative aspect-[16/10]">
                     <Image
-                      src={item.image}
+                      src={withBasePath(item.image)}
                       alt={item.title}
                       fill
                       className="object-cover"

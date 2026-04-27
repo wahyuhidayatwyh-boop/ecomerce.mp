@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { withBasePath } from "@/lib/utils";
 
 const Login = () => {
   return (
@@ -18,7 +19,7 @@ const Login = () => {
             <Card className="mx-auto w-full max-w-sm">
               <CardHeader className="flex flex-col items-center space-y-0">
                 <Image
-                  src="/logo.svg"
+                  src={withBasePath("/logo.svg")}
                   alt="My Portofolio logo"
                   width={190}
                   height={24}

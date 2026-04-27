@@ -18,7 +18,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 const ITEMS = [
   {
@@ -60,7 +60,7 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <Image
-            src="/logo.svg"
+            src={withBasePath("/logo.svg")}
             alt="My Portofolio logo"
             width={190}
             height={24}

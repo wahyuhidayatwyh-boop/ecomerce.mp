@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import Marquee from "react-fast-marquee";
 
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 type Company = {
   name: string;
@@ -132,7 +132,7 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
           {companies.map((company, index) => (
             <Link href={company.href} key={index}>
               <Image
-                src={company.logo}
+                src={withBasePath(company.logo)}
                 alt={`${company.name} logo`}
                 width={company.width}
                 height={company.height}
@@ -153,7 +153,7 @@ const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
               className="mx-8 inline-block transition-opacity hover:opacity-70"
             >
               <Image
-                src={company.logo}
+                src={withBasePath(company.logo)}
                 alt={`${company.name} logo`}
                 width={company.width}
                 height={company.height}

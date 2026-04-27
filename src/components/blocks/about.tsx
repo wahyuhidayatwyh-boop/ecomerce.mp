@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 
 const About = () => {
   return (
@@ -65,7 +65,7 @@ export function ImageSection({ images, className }: ImageSectionProps) {
           className="relative aspect-[2/1.5] overflow-hidden rounded-2xl"
         >
           <Image
-            src={image.src}
+            src={withBasePath(image.src)}
             alt={image.alt}
             fill
             className="object-cover"

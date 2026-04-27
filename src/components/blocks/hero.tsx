@@ -10,6 +10,7 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { withBasePath } from "@/lib/utils";
 
 const features = [
   {
@@ -103,7 +104,7 @@ export const Hero = () => {
       <div className="mt-12 md:mt-20 lg:container lg:mt-24">
         <div className="bg-muted/30 relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg">
           <Image
-            src="/hero.png"
+            src={withBasePath("/hero.png")}
             alt="Tampilan website portofolio My Portofolio"
             fill
             className="object-contain object-center"

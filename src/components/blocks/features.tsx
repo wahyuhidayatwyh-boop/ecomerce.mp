@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react";
 import { DashedLine } from "../dashed-line";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { withBasePath } from "@/lib/utils";
 
 const items = [
   {
@@ -53,7 +54,7 @@ export const Features = () => {
                 <div className="flex-1 p-4 pe-0! md:p-6">
                   <div className="relative aspect-[1.28/1] overflow-hidden">
                     <Image
-                      src={item.image}
+                      src={withBasePath(item.image)}
                       alt={`${item.title} interface`}
                       fill
                       className="object-cover object-left-top ps-4 pt-2"
