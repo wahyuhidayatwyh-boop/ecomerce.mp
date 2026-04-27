@@ -1,12 +1,12 @@
 "use client";
+import { useState } from "react";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check } from "lucide-react";
 import { motion } from "motion/react";
-import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { serverAction } from "@/actions/server-action";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -31,6 +31,9 @@ import { formSchema } from "@/lib/form-schema";
 type Schema = z.infer<typeof formSchema>;
 
 export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasSucceeded, setHasSucceeded] = useState(false);
+
   const form = useForm<Schema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,20 +45,16 @@ export function ContactForm() {
       agree: false,
     } as unknown as Schema,
   });
-  const formAction = useAction(serverAction, {
-    onSuccess: () => {
-      // TODO: show success message
-      form.reset();
-    },
-    onError: () => {
-      // TODO: show error message
-    },
-  });
+
   const handleSubmit = form.handleSubmit(async (data: Schema) => {
-    formAction.execute(data);
+    setIsSubmitting(true);
+    // Static mode: submit disimulasikan di client.
+    void data;
+    form.reset();
+    setHasSucceeded(true);
+    setIsSubmitting(false);
   });
 
-  const { isExecuting, hasSucceeded } = formAction;
   if (hasSucceeded) {
     return (
       <div className="w-full gap-2 rounded-md border p-2 sm:p-5 md:p-8">
@@ -178,7 +177,7 @@ export function ContactForm() {
             ];
             return (
               <FormItem className="w-full">
-              <FormLabel>Ukuran tim </FormLabel>
+                <FormLabel>Ukuran tim </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className="w-full">
@@ -242,7 +241,7 @@ export function ContactForm() {
         />
         <div className="flex w-full items-center justify-end pt-3">
           <Button className="rounded-lg" size="sm">
-            {isExecuting ? "Mengirim..." : "Kirim"}
+            {isSubmitting ? "Mengirim..." : "Kirim"}
           </Button>
         </div>
       </form>

@@ -62,6 +62,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://wahyuhidayatwyh-boop.github.io/ecomerce.mp/"),
   title: {
     default: "My Portofolio - Jasa Website Portofolio Profesional",
     template: "%s | My Portofolio",
