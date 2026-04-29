@@ -33,8 +33,8 @@ const portfolioItems = [
   {
     title: "Portofolio UI Designer",
     category: "Freelancer",
-    image: "/resource-allocation/templates.webp",
-    previewUrl: "https://portfolio-ui-designer.vercel.app",
+    image: "/about/portofolio4.png",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio4/",
   },
   {
     title: "Website Portofolio Konsultan",
