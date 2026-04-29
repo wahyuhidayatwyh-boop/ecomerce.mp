@@ -14,15 +14,15 @@ const portfolioItems = [
   },
   {
     title: "Landing Page Agensi Kreatif",
-    category: "Bisnis Jasa",
-    image: "/about/2.webp",
-    previewUrl: "https://landing-agensi.vercel.app",
+    category: "Website Portofolio Pribadi",
+    image: "/about/portofolio2.png",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio2/",
   },
   {
-    title: "Portofolio Fotografer",
-    category: "Kreator",
-    image: "/about/3.webp",
-    previewUrl: "https://portfolio-fotografer.vercel.app",
+    title: "Website Portofolio Pribadi",
+    category: "Website Portofolio Pribadi",
+    image: "/about/portofolio3.png",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/Portofolio3/",
   },
   {
     title: "Website Portofolio Interior",
