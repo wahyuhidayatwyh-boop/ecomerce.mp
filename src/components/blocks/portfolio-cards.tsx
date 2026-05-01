@@ -37,10 +37,10 @@ const portfolioItems = [
     previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio4/",
   },
   {
-    title: "Website Portofolio Konsultan",
+    title: "Website Portofolio Teknik Industri",
     category: "Profesional",
-    image: "/resource-allocation/graveyard.webp",
-    previewUrl: "https://portfolio-konsultan.vercel.app",
+    image: "/about/portofolio6.png",
+    previewUrl: "https://rizkywassyifa.netlify.app/",
   },
 ];
 
