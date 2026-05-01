@@ -29,7 +29,7 @@ const items = [
       "Mahasiswa Teknik Industri yang berfokus pada optimasi proses, analisis data, dan efisiensi operasional. Dikenal sebagai pribadi yang cepat belajar, teliti, dan bertanggung jawab dalam menghasilkan solusi yang efektif.",
     author: "Rizky Wassyifa ",
     role: "Mahasiswa Teknik Industri",
-    company: "Bramanta Interior",
+    company: "Asisten Laboratorium",
     image: "/testimonials/Foto_Lab.JPG.jpeg",
   },
   
