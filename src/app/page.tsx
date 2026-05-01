@@ -11,7 +11,7 @@ import { Testimonials } from "@/components/blocks/testimonials";
 export default function Home() {
   return (
     <>
-      <Background className="via-muted to-muted/80">
+      <Background>
         <Hero />
         <Logos />
         <PortfolioCards />

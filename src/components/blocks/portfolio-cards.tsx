@@ -25,10 +25,10 @@ const portfolioItems = [
     previewUrl: "https://wahyuhidayatwyh-boop.github.io/Portofolio3/",
   },
   {
-    title: "Website Portofolio Interior",
-    category: "Studio",
-    image: "/about/4.webp",
-    previewUrl: "https://portfolio-interior.vercel.app",
+    title: "Website Portofolio Pribadi",
+    category: "Website Portofolio Pribadi ",
+    image: "/about/portofolio5.png",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio5/",
   },
   {
     title: "Portofolio UI Designer",

@@ -18,44 +18,21 @@ import { cn, withBasePath } from "@/lib/utils";
 const items = [
   {
     quote:
-      "Tim My Portofolio bantu kami launch website portofolio dalam hitungan hari, hasilnya langsung dipakai untuk closing klien.",
-    author: "Rina Pratama",
-    role: "Founder",
-    company: "Arunika Studio",
-    image: "/testimonials/amy-chase.webp",
+      "Saya adalah mahasiswa aktif semester 6 Teknik Logistik di Telkom University Purwokerto yang aktif dalam Lomba, Organisasi, Riset, Pengabdian Masyarakat, dan Mahasiswa Representatif Telkom University 2026.",
+    author: "Yulia Rahman Pasaribu",
+    role: "Mahasiswa Teknik Logistik",
+    company: "Mapres TOP 4 Telkom University Purwokerto",
+    image: "/testimonials/amy-chase.jpeg",
   },
   {
     quote:
-      "Website portofolio dari My Portofolio bikin proposal kami lebih dipercaya karena studi kasusnya terlihat rapi.",
-    author: "Dimas Kurniawan",
-    role: "Creative Director",
-    company: "Nusa Creative",
-    image: "/testimonials/jonas-kotara.webp",
-  },
-  {
-    quote:
-      "Personal branding saya naik banget sejak punya website portofolio yang proper.",
-    author: "Salsa Putri",
-    role: "Founder",
-    company: "Salsa Creative",
-    image: "/testimonials/kevin-yam.webp",
-  },
-  {
-    quote:
-      "Portofolio website baru bikin brand kami terlihat jauh lebih profesional.",
-    author: "Bagas Mahendra",
-    role: "Founder",
+      "Mahasiswa Teknik Industri yang berfokus pada optimasi proses, analisis data, dan efisiensi operasional. Dikenal sebagai pribadi yang cepat belajar, teliti, dan bertanggung jawab dalam menghasilkan solusi yang efektif.",
+    author: "Rizky Wassyifa ",
+    role: "Mahasiswa Teknik Industri",
     company: "Bramanta Interior",
-    image: "/testimonials/kundo-marta.webp",
+    image: "/testimonials/Foto_Lab.JPG.jpeg",
   },
-  {
-    quote:
-      "Tim My Portofolio bantu kami launch website portofolio dalam hitungan hari, hasilnya langsung dipakai untuk closing klien.",
-    author: "Rina Pratama",
-    role: "Founder",
-    company: "Arunika Studio",
-    image: "/testimonials/amy-chase.webp",
-  },
+  
   {
     quote:
       "Website portofolio dari My Portofolio bikin proposal kami lebih dipercaya karena studi kasusnya terlihat rapi.",
