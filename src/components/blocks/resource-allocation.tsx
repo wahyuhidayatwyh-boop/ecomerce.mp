@@ -6,9 +6,9 @@ import { cn, withBasePath } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Template portofolio siap pakai.",
+    title: "Mulai Pendaftaran",
     description:
-      "Proses produksi lebih cepat dengan struktur halaman yang sudah teruji.",
+      "Klik tombol Isi Formulir di halaman kontak untuk memulai proses pesanan Anda.",
     images: [
       {
         src: "/resource-allocation/templates.png",
@@ -22,9 +22,9 @@ const topItems = [
     fade: [""],
   },
   {
-    title: "Struktur konten yang jelas.",
+    title: "Selesaikan Pembayaran",
     description:
-      "Profil, layanan, studi kasus, dan testimoni tersusun rapi agar mudah dipahami calon klien.",
+      "Lakukan transfer sesuai harga paket melalui BRI atau QRIS DANA yang tersedia di akhir form.",
     images: [
       { src: "/logos/jira.svg", alt: "Jira logo", width: 48, height: 48 },
       { src: "/logos/excel.svg", alt: "Excel logo", width: 48, height: 48 },
@@ -120,7 +120,7 @@ export const ResourceAllocation = () => {
     >
       <div className="">
         <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Spesialis Website Portofolio Profesional
+          5 Langkah Mudah Miliki Website Portofolio
         </h2>
 
         <div className="mt-8 md:mt-12 lg:mt-20">
