@@ -27,6 +27,7 @@ const pricingPlans = [
     button: {
       text: "Konsultasi",
       variant: "outline" as const,
+      href: "https://wa.me/6283843653251?text=Halo%20Admin!%20Saya%20tertarik%20dengan%20Paket%20Starter%20(100rb).%20Saya%20sudah%20lihat%20katalognya%20dan%20ingin%20pakai%20Kode%20Desain%3A%20%5BIsi%20Kode%5D.%20Apa%20saja%20data%20yang%20perlu%20saya%20siapkan%3F",
     },
   },
   {
@@ -34,6 +35,7 @@ const pricingPlans = [
     button: {
       text: "Konsultasi",
       variant: "outline" as const,
+      href: "https://wa.me/6283843653251?text=Halo%2C%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Growth%20(Mulai%20250rb).%20Saya%20butuh%20fitur%20halaman%20studi%20kasus%20dan%20copywriting.%20Bisa%20bantu%20jelaskan%20prosedurnya%3F",
     },
   },
   {
@@ -41,6 +43,7 @@ const pricingPlans = [
     button: {
       text: "Jadwalkan Meeting",
       variant: "outline" as const,
+      href: "https://wa.me/6283843653251?text=Halo!%20Saya%20ingin%20mendiskusikan%20kebutuhan%20website%20portofolio%20skala%20besar%20(Paket%20Scale).%20Saya%20butuh%20hosting%20berbayar%20dan%20fitur%20CMS.%20Kapan%20ada%20waktu%20untuk%20jadwal%20diskusi%20lebih%20lanjut%3F",
     },
   },
 ];
@@ -51,8 +54,8 @@ const comparisonFeatures: FeatureSection[] = [
     features: [
       {
         name: "Jumlah halaman website",
-        free: "Hingga 3",
-        startup: "Hingga 12",
+        free: "Hingga 5",
+        startup: "Hingga 10",
         enterprise: "Custom",
       },
       {
@@ -114,6 +117,12 @@ const comparisonFeatures: FeatureSection[] = [
         startup: false,
         enterprise: true,
       },
+      {
+        name: "Hosting & Domain",
+        free: "Gratis (Vercel/Netlify)",
+        startup: "Gratis (Vercel/Netlify)",
+        enterprise: "Premium & Berbayar",
+      },
     ],
   },
   {
@@ -149,19 +158,19 @@ const comparisonFeatures: FeatureSection[] = [
 
 const renderFeatureValue = (value: true | false | null | string) => {
   if (value === true) {
-    return <Check className="size-5" />;
+    return <Check className="mx-auto size-5 text-[#A67C52]" />;
   }
   if (value === false) {
-    return <X className="size-5" />;
+    return <X className="mx-auto size-5 text-gray-300" />;
   }
   if (value === null) {
     return null;
   }
   // String value
   return (
-    <div className="flex items-center gap-2">
-      <Check className="size-4" />
-      <span className="text-muted-foreground">{value}</span>
+    <div className="flex items-center justify-center gap-2">
+      <Check className="size-4 text-[#A67C52]" />
+      <span className="text-sm font-semibold text-gray-900">{value}</span>
     </div>
   );
 };
@@ -170,13 +179,28 @@ export const PricingTable = () => {
   const [selectedPlan, setSelectedPlan] = useState(1);
 
   return (
-    <section className="pb-28 lg:py-32">
-      <div className="container">
-        <PlanHeaders
-          selectedPlan={selectedPlan}
-          onPlanChange={setSelectedPlan}
-        />
-        <FeatureSections selectedPlan={selectedPlan} />
+    <section className="bg-[#FFFDF5] py-24 sm:py-32 relative overflow-hidden">
+      {/* Subtle grid pattern background */}
+      <div className="absolute inset-0 z-0 opacity-20" 
+           style={{ backgroundImage: 'radial-gradient(#A67C52 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+      
+      <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center mb-16 space-y-4">
+          <h2 className="font-display text-2xl tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+            Bandingkan Paket Portofolio
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600 font-sans">
+            Pilih paket yang paling sesuai dengan kebutuhan branding dan kapasitas proyek Anda.
+          </p>
+        </div>
+        
+        <div className="container">
+          <PlanHeaders
+            selectedPlan={selectedPlan}
+            onPlanChange={setSelectedPlan}
+          />
+          <FeatureSections selectedPlan={selectedPlan} />
+        </div>
       </div>
     </section>
   );
@@ -206,10 +230,13 @@ const PlanHeaders = ({
               />
             </CollapsibleTrigger>
             <Button
+              asChild
               variant={pricingPlans[selectedPlan].button.variant}
               className="w-fit"
             >
-              {pricingPlans[selectedPlan].button.text}
+              <a href={(pricingPlans[selectedPlan].button as any).href} target="_blank" rel="noopener noreferrer">
+                {pricingPlans[selectedPlan].button.text}
+              </a>
             </Button>
           </div>
           <CollapsibleContent className="flex flex-col space-y-2 p-2">
@@ -238,10 +265,12 @@ const PlanHeaders = ({
         <div className="col-span-1 max-md:hidden"></div>
 
         {pricingPlans.map((plan, index) => (
-          <div key={index} className="">
-            <h3 className="mb-3 text-2xl font-semibold">{plan.name}</h3>
-            <Button variant={plan.button.variant} className="">
-              {plan.button.text}
+          <div key={index} className="text-center">
+            <h3 className="mb-3 text-2xl font-bold text-gray-900">{plan.name}</h3>
+            <Button asChild className="w-full bg-[#A67C52] hover:bg-[#8B5E3C] text-white shadow-sm transition-all duration-300 active:scale-95">
+              <a href={(plan.button as any).href} target="_blank" rel="noopener noreferrer">
+                {plan.button.text}
+              </a>
             </Button>
           </div>
         ))}
