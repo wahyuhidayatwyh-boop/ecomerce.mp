@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { Check, ChevronsUpDown, X } from "lucide-react";
 
@@ -10,6 +10,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+
+interface PricingPlan {
+  name: string;
+  button: {
+    text: string;
+    variant: "outline" | "default" | "secondary" | "ghost" | "link";
+    href: string;
+  };
+}
 
 interface FeatureSection {
   category: string;
@@ -21,7 +30,7 @@ interface FeatureSection {
   }[];
 }
 
-const pricingPlans = [
+const pricingPlans: PricingPlan[] = [
   {
     name: "Starter",
     button: {
@@ -234,7 +243,7 @@ const PlanHeaders = ({
               variant={pricingPlans[selectedPlan].button.variant}
               className="w-fit"
             >
-              <a href={(pricingPlans[selectedPlan].button as any).href} target="_blank" rel="noopener noreferrer">
+              <a href={pricingPlans[selectedPlan].button.href} target="_blank" rel="noopener noreferrer">
                 {pricingPlans[selectedPlan].button.text}
               </a>
             </Button>
@@ -268,7 +277,7 @@ const PlanHeaders = ({
           <div key={index} className="text-center">
             <h3 className="mb-3 text-2xl font-bold text-gray-900">{plan.name}</h3>
             <Button asChild className="w-full bg-[#A67C52] hover:bg-[#8B5E3C] text-white shadow-sm transition-all duration-300 active:scale-95">
-              <a href={(plan.button as any).href} target="_blank" rel="noopener noreferrer">
+              <a href={plan.button.href} target="_blank" rel="noopener noreferrer">
                 {plan.button.text}
               </a>
             </Button>

@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
-import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const tiers = [
   {
@@ -55,9 +56,9 @@ const tiers = [
   },
 ];
 
-export function Pricing() {
+export function Pricing({ className }: { className?: string }) {
   return (
-    <section className="bg-[#FFFDF5] py-24 sm:py-32 relative overflow-hidden">
+    <section className={cn("bg-[#FFFDF5] py-24 sm:py-32 relative overflow-hidden", className)}>
       {/* Subtle grid pattern background */}
       <div className="absolute inset-0 z-0 opacity-20" 
            style={{ backgroundImage: 'radial-gradient(#A67C52 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
@@ -110,7 +111,7 @@ export function Pricing() {
                   {/* Kapasitas Proyek */}
                   <div>
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Kapasitas Proyek</h4>
-                    <ul role="list" className="space-y-2 text-sm leading-6 text-gray-600">
+                    <ul className="space-y-2 text-sm leading-6 text-gray-600">
                       <li className="flex gap-x-3 items-start">
                         <Check className="h-4 w-4 mt-1 text-[#A67C52] shrink-0" aria-hidden="true" />
                         <span>{tier.features.find(f => f.includes("Halaman"))}</span>
@@ -131,7 +132,7 @@ export function Pricing() {
                   {/* Fitur Utama */}
                   <div>
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Fitur Utama</h4>
-                    <ul role="list" className="space-y-2 text-sm leading-6 text-gray-600">
+                    <ul className="space-y-2 text-sm leading-6 text-gray-600">
                       {tier.name === "Starter" && (
                         <>
                           <li className="flex gap-x-3 items-start">
@@ -180,7 +181,7 @@ export function Pricing() {
                   {/* Dukungan */}
                   <div>
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Dukungan</h4>
-                    <ul role="list" className="space-y-2 text-sm leading-6 text-gray-600">
+                    <ul className="space-y-2 text-sm leading-6 text-gray-600">
                       <li className="flex gap-x-3 items-start">
                         <Check className="h-4 w-4 mt-1 text-[#A67C52] shrink-0" aria-hidden="true" />
                         <span>Support {tier.features.find(f => f.includes("Masa Support"))?.split("Masa Support ")[1]}</span>
