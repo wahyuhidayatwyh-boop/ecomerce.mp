@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, ClipboardList } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/blocks/contact-form";
@@ -105,6 +105,17 @@ export default function Contact() {
               >
                 <MessageCircle className="size-5" />
                 Konsultasi dengan Admin via WhatsApp
+              </Link>
+            </Button>
+
+            <Button asChild className="w-full h-12 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-bold gap-2 shadow-lg shadow-gray-500/10 transition-all">
+              <Link
+                href="https://bit.ly/datamyportofolioid"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ClipboardList className="size-5" />
+                Isi Formulir Pendaftaran & Data
               </Link>
             </Button>
           </div>
