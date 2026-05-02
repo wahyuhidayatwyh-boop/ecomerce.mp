@@ -58,7 +58,7 @@ const tiers = [
 
 export function Pricing({ className }: { className?: string }) {
   return (
-    <section className={cn("bg-[#FFFDF5] dark:bg-transparent py-24 sm:py-32 relative overflow-hidden transition-colors duration-500", className)}>
+    <section className={cn("py-24 sm:py-32 relative overflow-hidden transition-colors duration-500", className)}>
       {/* Subtle grid pattern background */}
       <div className="absolute inset-0 z-0 opacity-20 dark:opacity-10" 
            style={{ backgroundImage: 'radial-gradient(#A67C52 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>

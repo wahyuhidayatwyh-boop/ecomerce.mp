@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 
 import { ArrowRight } from "lucide-react";
 
@@ -18,7 +18,7 @@ import { cn, withBasePath } from "@/lib/utils";
 const items = [
   {
     quote:
-      "Saya adalah mahasiswa aktif semester 6 Teknik Logistik di Telkom University Purwokerto yang aktif dalam Lomba, Organisasi, Riset, Pengabdian Masyarakat, dan Mahasiswa Representatif Telkom University 2026.",
+      "Website portofolio ini sangat membantu saya dalam membangun personal branding sebagai Mahasiswa Berprestasi. Tampilannya elegan dan sangat profesional!",
     author: "Yulia Rahman Pasaribu",
     role: "Mahasiswa Teknik Logistik",
     company: "Mapres TOP 4 Telkom University Purwokerto",
@@ -26,7 +26,7 @@ const items = [
   },
   {
     quote:
-      "Mahasiswa Teknik Industri yang berfokus pada optimasi proses, analisis data, dan efisiensi operasional. Dikenal sebagai pribadi yang cepat belajar, teliti, dan bertanggung jawab dalam menghasilkan solusi yang efektif.",
+      "Proses pembuatan websitenya cepat dan hasilnya sesuai ekspektasi. Sekarang saya punya wadah profesional untuk memamerkan proyek-proyek teknik saya.",
     author: "Rizky Wassyifa ",
     role: "Mahasiswa Teknik Industri",
     company: "Asisten Laboratorium",

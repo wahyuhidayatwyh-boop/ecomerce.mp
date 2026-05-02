@@ -10,16 +10,16 @@ import { withBasePath } from "@/lib/utils";
 
 const items = [
   {
-    title: "Portofolio Personal",
-    image: "/features/triage-card.svg",
+    title: "Mari beralih dari CV",
+    image: "/features/cv.png",
   },
   {
-    title: "Portofolio Bisnis",
-    image: "/features/cycle-card.svg",
+    title: "Ke Rumah Digital",
+    image: "/features/rm.png",
   },
   {
-    title: "Portofolio Kreatif",
-    image: "/features/overview-card.svg",
+    title: "Tampilan Professional",
+    image: "/features/cs.png",
   },
 ];
 

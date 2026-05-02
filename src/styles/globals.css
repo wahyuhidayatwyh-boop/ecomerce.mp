@@ -24,8 +24,8 @@
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
   --ring: oklch(0 0 0);
-  --bg-gradient-from: oklch(0.97 0.025 90); /* Subtle, light Cream */
-  --bg-gradient-via: oklch(0.98 0.015 90 / 30%);
+  --bg-gradient-from: oklch(0.99 0.01 90); /* Extremely light cream, nearly white */
+  --bg-gradient-via: oklch(0.99 0.005 90 / 20%);
 
   --chart-1: oklch(0.2 0 0);
   --chart-2: oklch(0.3 0 0);

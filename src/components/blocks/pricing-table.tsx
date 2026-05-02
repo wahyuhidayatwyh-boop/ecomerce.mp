@@ -170,7 +170,7 @@ const renderFeatureValue = (value: true | false | null | string) => {
     return <Check className="mx-auto size-5 text-[#A67C52]" />;
   }
   if (value === false) {
-    return <X className="mx-auto size-5 text-gray-300" />;
+    return <X className="mx-auto size-5 text-gray-300 dark:text-zinc-600" />;
   }
   if (value === null) {
     return null;
@@ -179,7 +179,7 @@ const renderFeatureValue = (value: true | false | null | string) => {
   return (
     <div className="flex items-center justify-center gap-2">
       <Check className="size-4 text-[#A67C52]" />
-      <span className="text-sm font-semibold text-gray-900">{value}</span>
+      <span className="text-sm font-semibold text-gray-900 dark:text-zinc-100">{value}</span>
     </div>
   );
 };
@@ -188,17 +188,17 @@ export const PricingTable = () => {
   const [selectedPlan, setSelectedPlan] = useState(1);
 
   return (
-    <section className="bg-[#FFFDF5] py-24 sm:py-32 relative overflow-hidden">
+    <section className="py-24 sm:py-32 relative overflow-hidden transition-colors duration-500">
       {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 z-0 opacity-20" 
+      <div className="absolute inset-0 z-0 opacity-20 dark:opacity-10" 
            style={{ backgroundImage: 'radial-gradient(#A67C52 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
       
       <div className="container relative z-10 mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center mb-16 space-y-4">
-          <h2 className="font-display text-2xl tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+          <h2 className="font-display text-2xl tracking-tight text-gray-900 dark:text-zinc-100 md:text-4xl lg:text-5xl">
             Bandingkan Paket Portofolio
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600 font-sans">
+          <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-zinc-400 font-sans">
             Pilih paket yang paling sesuai dengan kebutuhan branding dan kapasitas proyek Anda.
           </p>
         </div>
@@ -229,13 +229,13 @@ const PlanHeaders = ({
       {/* Mobile View */}
       <div className="md:hidden">
         <Collapsible open={isOpen} onOpenChange={setIsOpen} className="">
-          <div className="flex items-center justify-between border-b py-4">
+          <div className="flex items-center justify-between border-b dark:border-zinc-800 py-4">
             <CollapsibleTrigger className="flex items-center gap-2">
-              <h3 className="text-2xl font-semibold">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-zinc-100">
                 {pricingPlans[selectedPlan].name}
               </h3>
               <ChevronsUpDown
-                className={`size-5 transition-transform ${isOpen ? "rotate-180" : ""}`}
+                className={`size-5 transition-transform text-gray-500 ${isOpen ? "rotate-180" : ""}`}
               />
             </CollapsibleTrigger>
             <Button
@@ -248,7 +248,7 @@ const PlanHeaders = ({
               </a>
             </Button>
           </div>
-          <CollapsibleContent className="flex flex-col space-y-2 p-2">
+          <CollapsibleContent className="flex flex-col space-y-2 p-2 bg-gray-50 dark:bg-zinc-900/50 rounded-b-xl">
             {pricingPlans.map(
               (plan, index) =>
                 index !== selectedPlan && (
@@ -260,6 +260,7 @@ const PlanHeaders = ({
                       onPlanChange(index);
                       setIsOpen(false);
                     }}
+                    className="dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
                   >
                     {plan.name}
                   </Button>
@@ -270,12 +271,12 @@ const PlanHeaders = ({
       </div>
 
       {/* Desktop View */}
-      <div className="grid grid-cols-4 gap-4 max-md:hidden">
+      <div className="grid grid-cols-4 gap-4 max-md:hidden border-b dark:border-zinc-800 pb-8">
         <div className="col-span-1 max-md:hidden"></div>
 
         {pricingPlans.map((plan, index) => (
           <div key={index} className="text-center">
-            <h3 className="mb-3 text-2xl font-bold text-gray-900">{plan.name}</h3>
+            <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-zinc-100">{plan.name}</h3>
             <Button asChild className="w-full bg-[#A67C52] hover:bg-[#8B5E3C] text-white shadow-sm transition-all duration-300 active:scale-95">
               <a href={plan.button.href} target="_blank" rel="noopener noreferrer">
                 {plan.button.text}
@@ -292,20 +293,20 @@ const FeatureSections = ({ selectedPlan }: { selectedPlan: number }) => (
   <>
     {comparisonFeatures.map((section, sectionIndex) => (
       <div key={sectionIndex} className="">
-        <div className="border-primary/40 border-b py-4">
-          <h3 className="text-lg font-semibold">{section.category}</h3>
+        <div className="border-b border-gray-200 dark:border-zinc-800 py-6 mt-8">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-zinc-100">{section.category}</h3>
         </div>
         {section.features.map((feature, featureIndex) => (
           <div
             key={featureIndex}
-            className="text-foreground grid grid-cols-2 font-medium max-md:border-b md:grid-cols-4"
+            className="text-foreground grid grid-cols-2 font-medium max-md:border-b max-md:border-gray-100 dark:max-md:border-zinc-900 md:grid-cols-4 hover:bg-gray-50/50 dark:hover:bg-zinc-900/30 transition-colors px-2"
           >
-            <span className="inline-flex items-center py-4">
+            <span className="inline-flex items-center py-4 text-gray-600 dark:text-zinc-400">
               {feature.name}
             </span>
             {/* Mobile View - Only Selected Plan */}
             <div className="md:hidden">
-              <div className="flex items-center gap-1 py-4 md:border-b">
+              <div className="flex items-center gap-1 py-4">
                 {renderFeatureValue(
                   [feature.free, feature.startup, feature.enterprise][
                     selectedPlan
@@ -319,7 +320,7 @@ const FeatureSections = ({ selectedPlan }: { selectedPlan: number }) => (
                 (value, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-1 border-b py-4"
+                    className="flex items-center gap-1 border-b border-gray-100 dark:border-zinc-900 py-4"
                   >
                     {renderFeatureValue(value)}
                   </div>

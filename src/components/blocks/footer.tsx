@@ -77,12 +77,7 @@ export function Footer() {
           dilindungi.
         </p>
       </nav>
-
-      <div className="text-primary mt-10 w-full md:mt-14 lg:mt-20">
-        <p className="text-center text-[clamp(3rem,15vw,12rem)] leading-none font-bold tracking-tight lowercase">
-          my portofolio
-        </p>
-      </div>
+      
     </footer>
   );
 }

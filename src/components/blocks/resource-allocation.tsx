@@ -85,13 +85,13 @@ const bottomItems = [
 
 export const ResourceAllocation = () => {
   return (
-    <section className="py-24 overflow-hidden bg-[#FFFDF5] dark:bg-transparent transition-colors duration-500">
+    <section className="py-24 overflow-hidden bg-[#FFFEFA] dark:bg-transparent transition-colors duration-500">
       <div className="container px-4 mx-auto max-w-7xl">
         <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-5xl md:text-6xl mb-20">
           5 Langkah Mudah Miliki Website Portofolio
         </h2>
 
-        <div className="border border-dashed border-gray-300 dark:border-zinc-800 rounded-3xl overflow-hidden bg-white/50 dark:bg-white/5 backdrop-blur-sm shadow-sm">
+        <div className="border border-dashed border-gray-300 dark:border-zinc-800 rounded-3xl overflow-hidden backdrop-blur-sm">
           {/* Top Row: 2 items */}
           <div className="grid grid-cols-1 md:grid-cols-2">
             {topItems.map((item, i) => (
@@ -152,7 +152,7 @@ const Item = ({ item, isLast, className }: ItemProps) => {
               width={image.width}
               height={image.height}
               className={cn(
-                "object-contain max-h-[260px] w-auto drop-shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 bg-white dark:bg-zinc-800 p-2",
+                "object-contain max-h-[260px] w-auto drop-shadow-2xl rounded-xl border border-gray-100 dark:border-zinc-800 p-2 transition-colors duration-500",
                 item.title.includes("Submit") ? "max-h-[140px]" : ""
               )}
             />

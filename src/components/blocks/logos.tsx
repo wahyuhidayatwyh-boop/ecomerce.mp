@@ -41,10 +41,6 @@ export const Logos = () => {
       </div>
 
       <div className="relative w-full">
-        {/* Full-width side fades that blend with the page background */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 lg:w-64 z-10 bg-linear-to-r from-background to-transparent pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 lg:w-64 z-10 bg-linear-to-l from-background to-transparent pointer-events-none" />
-
         <div className="space-y-4 lg:space-y-8">
           <Marquee pauseOnHover speed={40} className="py-4">
             {techStack.map((tech, index) => (
