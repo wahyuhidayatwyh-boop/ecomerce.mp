@@ -1,8 +1,6 @@
 import React from "react";
-
 import Link from "next/link";
-
-import { Facebook, Linkedin, MessageCircle, Twitter } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/blocks/contact-form";
@@ -13,7 +11,7 @@ const contactInfo = [
     title: "Kantor & Domisili Tim",
     content: (
       <p className="text-muted-foreground mt-3">
-        Jakarta - Bandung (Remote First)
+        Purwokerto, Banyumas, Jawa Tengah
         <br />
         Siap melayani seluruh Indonesia
       </p>
@@ -24,58 +22,38 @@ const contactInfo = [
     content: (
       <div className="mt-3">
         <div>
-          <p className="">Konsultasi Proyek</p>
+          <p className="text-sm font-medium">Konsultasi Proyek</p>
           <Link
-            href="mailto:hello@myportofolio.id"
+            href="mailto:hellomyportofolio@gmail.com"
             className="text-muted-foreground hover:text-foreground"
           >
-            hello@myportofolio.id
-          </Link>
-        </div>
-        <div className="mt-1">
-          <p className="">Partnership</p>
-          <Link
-            href="mailto:partnership@myportofolio.id"
-            className="text-muted-foreground hover:text-foreground"
-          >
-            partnership@myportofolio.id
+            hellomyportofolio@gmail.com
           </Link>
         </div>
       </div>
     ),
   },
   {
-    title: "Ikuti Kami",
+    title: "Hubungi Kami",
     content: (
       <div className="mt-3 flex gap-6 lg:gap-10">
-        <Link href="#" className="text-muted-foreground hover:text-foreground">
-          <Facebook className="size-5" />
-        </Link>
-        <Link
-          href="#"
-          className="text-muted-foreground hover:text-foreground"
+        <Link 
+          href="https://instagram.com/my_portofolio.id" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-[#E4405F] transition-colors flex flex-col items-center gap-1"
         >
-          <Twitter className="size-5" />
+          <Instagram className="size-6" />
+          <span className="text-[10px] font-bold uppercase tracking-tighter">Instagram</span>
         </Link>
-        <Link href="#" className="text-muted-foreground hover:text-foreground">
-          <Linkedin className="size-5" />
-        </Link>
-      </div>
-    ),
-  },
-  {
-    title: "WhatsApp",
-    content: (
-      <div className="mt-3">
-        <p className="text-sm">Respon Cepat</p>
         <Link
           href="https://wa.me/6283843653251?text=Halo%20Admin%20MyPortofolio!%20%F0%9F%91%8B%20Saya%20baru%20saja%20melihat%20website%20kakak%20dan%20tertarik%20ingin%20buat%20portofolio%20juga.%20Boleh%20tanya-tanya%20dulu%20soal%20prosedurnya%3F"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#A67C52] hover:text-[#8B5E3C] font-semibold flex items-center gap-2"
+          className="text-muted-foreground hover:text-[#25D366] transition-colors flex flex-col items-center gap-1"
         >
-          <MessageCircle className="size-4" />
-          +62 838-4365-3251
+          <MessageCircle className="size-6" />
+          <span className="text-[10px] font-bold uppercase tracking-tighter">WhatsApp</span>
         </Link>
       </div>
     ),
@@ -94,7 +72,7 @@ export default function Contact() {
           konsep, desain, dan implementasinya.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-14 lg:mt-20 lg:gap-12">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 md:mt-14 lg:mt-20 lg:gap-12">
           {contactInfo.map((info, index) => (
             <div key={index}>
               <h2 className="font-medium">{info.title}</h2>
@@ -133,4 +111,3 @@ export default function Contact() {
     </section>
   );
 }
-
