@@ -1,168 +1,84 @@
-import Image from "next/image";
-import Link from "next/link";
-
+import { 
+  SiHtml5, 
+  SiJavascript, 
+  SiTypescript, 
+  SiReact, 
+  SiNextdotjs, 
+  SiTailwindcss, 
+  SiVercel, 
+  SiNetlify, 
+  SiBootstrap,
+} from "react-icons/si";
+import { FaRobot } from "react-icons/fa"; // For Antigravity
 import Marquee from "react-fast-marquee";
+import { cn } from "@/lib/utils";
 
-import { cn, withBasePath } from "@/lib/utils";
-
-type Company = {
-  name: string;
-  logo: string;
-  width: number;
-  height: number;
-  href: string;
-};
+const techStack = [
+  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Vercel", icon: SiVercel, color: "#000000" },
+  { name: "Netlify", icon: SiNetlify, color: "#00C7B7" },
+  { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+  { name: "Antigravity AI", icon: FaRobot, color: "#A67C52" },
+];
 
 export const Logos = () => {
-  const topRowCompanies = [
-    {
-      name: "Mercury",
-      logo: "/logos/mercury.svg",
-      width: 143,
-      height: 26,
-      href: "#!://mercury.com",
-    },
-    {
-      name: "Watershed",
-      logo: "/logos/watershed.svg",
-      width: 154,
-      height: 31,
-      href: "#!://watershed.com",
-    },
-    {
-      name: "Retool",
-      logo: "/logos/retool.svg",
-      width: 113,
-      height: 22,
-      href: "#!://retool.com",
-    },
-    {
-      name: "Descript",
-      logo: "/logos/descript.svg",
-      width: 112,
-      height: 27,
-      href: "#!://descript.com",
-    },
-  ];
-
-  const bottomRowCompanies = [
-    {
-      name: "Perplexity",
-      logo: "/logos/perplexity.svg",
-      width: 141,
-      height: 32,
-      href: "#!://perplexity.com",
-    },
-    {
-      name: "Monzo",
-      logo: "/logos/monzo.svg",
-      width: 104,
-      height: 18,
-      href: "#!://monzo.com",
-    },
-    {
-      name: "Ramp",
-      logo: "/logos/ramp.svg",
-      width: 105,
-      height: 28,
-      href: "#!://ramp.com",
-    },
-    {
-      name: "Raycast",
-      logo: "/logos/raycast.svg",
-      width: 128,
-      height: 33,
-      href: "#!://raycast.com",
-    },
-    {
-      name: "Arc",
-      logo: "/logos/arc.svg",
-      width: 90,
-      height: 28,
-      href: "#!://arc.com",
-    },
-  ];
-
   return (
     <section className="pb-28 lg:pb-32 overflow-hidden">
       <div className="container space-y-10 lg:space-y-16">
-        <div className="text-center">
-          <h2 className="mb-4 text-xl text-balance md:text-2xl lg:text-3xl">
-            Dipercaya oleh berbagai brand dan bisnis digital.
-            <br className="max-md:hidden" />
-            <span className="text-muted-foreground">
-              Dari UMKM, personal brand, hingga perusahaan skala menengah.
-            </span>
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl lg:text-4xl">
+            Teknologi & Tools Terbaik
           </h2>
+          <p className="text-lg text-muted-foreground font-sans">
+            Saya menggunakan ekosistem teknologi modern untuk memastikan website Anda cepat, aman, dan mudah dikelola.
+          </p>
         </div>
 
-        <div className="flex w-full flex-col items-center gap-8">
-          {/* Top row - 4 logos */}
-          <LogoRow companies={topRowCompanies} gridClassName="grid-cols-4" />
+        <div className="relative flex w-full flex-col items-center gap-8">
+          {/* Subtle gradient edges for the marquee */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#FFFDF5] to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#FFFDF5] to-transparent pointer-events-none" />
 
-          {/* Bottom row - 5 logos */}
-          <LogoRow
-            companies={bottomRowCompanies}
-            gridClassName="grid-cols-5"
-            direction="right"
-          />
+          <Marquee pauseOnHover speed={40} className="py-4">
+            {techStack.map((tech, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 mx-12 group transition-all duration-300"
+              >
+                <tech.icon 
+                  className="size-8 md:size-10 text-gray-400 group-hover:text-[var(--hover-color)] transition-colors duration-300" 
+                  style={{ "--hover-color": tech.color } as React.CSSProperties}
+                />
+                <span className="text-lg font-semibold text-gray-400 group-hover:text-gray-900 transition-colors duration-300">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </Marquee>
+          
+          <Marquee pauseOnHover speed={30} direction="right" className="py-4">
+            {[...techStack].reverse().map((tech, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 mx-12 group transition-all duration-300"
+              >
+                <tech.icon 
+                  className="size-8 md:size-10 text-gray-400 group-hover:text-[var(--hover-color)] transition-colors duration-300" 
+                  style={{ "--hover-color": tech.color } as React.CSSProperties}
+                />
+                <span className="text-lg font-semibold text-gray-400 group-hover:text-gray-900 transition-colors duration-300">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </Marquee>
         </div>
       </div>
     </section>
-  );
-};
-
-type LogoRowProps = {
-  companies: Company[];
-  gridClassName: string;
-  direction?: "left" | "right";
-};
-
-const LogoRow = ({ companies, gridClassName, direction }: LogoRowProps) => {
-  return (
-    <>
-      {/* Desktop static version */}
-      <div className="hidden md:block">
-        <div
-          className={cn(
-            "grid items-center justify-items-center gap-x-20 lg:gap-x-28",
-            gridClassName,
-          )}
-        >
-          {companies.map((company, index) => (
-            <Link href={company.href} key={index}>
-              <Image
-                src={withBasePath(company.logo)}
-                alt={`${company.name} logo`}
-                width={company.width}
-                height={company.height}
-                className="dark:opacity/100 object-contain opacity-50 transition-opacity hover:opacity-70 dark:invert"
-              />
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile marquee version */}
-      <div className="md:hidden">
-        <Marquee direction={direction} pauseOnHover>
-          {companies.map((company, index) => (
-            <Link
-              href={company.href}
-              key={index}
-              className="mx-8 inline-block transition-opacity hover:opacity-70"
-            >
-              <Image
-                src={withBasePath(company.logo)}
-                alt={`${company.name} logo`}
-                width={company.width}
-                height={company.height}
-                className="object-contain"
-              />
-            </Link>
-          ))}
-        </Marquee>
-      </div>
-    </>
   );
 };
