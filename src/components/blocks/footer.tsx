@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
 
@@ -72,7 +72,7 @@ export function Footer() {
             </li>
           ))}
         </ul>
-        <p>
+        <p className="text-center text-sm text-muted-foreground mt-8">
           Copyright {new Date().getFullYear()} My Portofolio. Seluruh hak cipta
           dilindungi.
         </p>
