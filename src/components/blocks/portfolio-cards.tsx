@@ -46,7 +46,7 @@ const portfolioItems = [
     category: "Profesional",
     code: "MP-06",
     image: "/about/portofolio6.png",
-    previewUrl: "https://rizkywassyifa.netlify.app/",
+    previewUrl: "https://rizkywassyifa.vercel.app/",
   },
 ];
 
