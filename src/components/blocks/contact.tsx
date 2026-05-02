@@ -1,8 +1,8 @@
-﻿import React from "react";
+import React from "react";
 
 import Link from "next/link";
 
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Twitter, MessageCircle } from "lucide-react";
 
 import { ContactForm } from "@/components/blocks/contact-form";
 import { DashedLine } from "@/components/dashed-line";
@@ -62,6 +62,23 @@ const contactInfo = [
       </div>
     ),
   },
+  {
+    title: "WhatsApp",
+    content: (
+      <div className="mt-3">
+        <p className="text-sm">Respon Cepat</p>
+        <Link
+          href="https://wa.me/6283843653251?text=Halo%20Admin%20MyPortofolio!%20%F0%9F%91%8B%20Saya%20baru%20saja%20melihat%20website%20kakak%20dan%20tertarik%20ingin%20buat%20portofolio%20juga.%20Boleh%20tanya-tanya%20dulu%20soal%20prosedurnya%3F"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#A67C52] hover:text-[#8B5E3C] font-semibold flex items-center gap-2"
+        >
+          <MessageCircle className="size-4" />
+          +62 838-4365-3251
+        </Link>
+      </div>
+    ),
+  },
 ];
 
 export default function Contact() {
@@ -76,7 +93,7 @@ export default function Contact() {
           konsep, desain, dan implementasinya.
         </p>
 
-        <div className="mt-10 flex justify-between gap-8 max-sm:flex-col md:mt-14 lg:mt-20 lg:gap-12">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:mt-14 lg:mt-20 lg:gap-12">
           {contactInfo.map((info, index) => (
             <div key={index}>
               <h2 className="font-medium">{info.title}</h2>
