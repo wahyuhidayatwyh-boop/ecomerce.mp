@@ -1,7 +1,5 @@
 import Image from "next/image";
-
 import { DashedLine } from "../dashed-line";
-
 import { cn, withBasePath } from "@/lib/utils";
 
 const topItems = [
@@ -17,145 +15,98 @@ const topItems = [
         height: 186,
       },
     ],
-    className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+    className: "md:col-span-3",
     fade: [""],
   },
   {
-    title: "Selesaikan Pembayaran",
+    title: "Isi Data Form",
     description:
-      "Lakukan transfer sesuai harga paket melalui BRI atau QRIS DANA yang tersedia di akhir form.",
-    images: [
-      { src: "/logos/jira.svg", alt: "Jira logo", width: 48, height: 48 },
-      { src: "/logos/excel.svg", alt: "Excel logo", width: 48, height: 48 },
-      {
-        src: "/logos/notion.svg",
-        alt: "Notion logo",
-        width: 48,
-        height: 48,
-      },
-      { src: "/logos/word.svg", alt: "Word logo", width: 48, height: 48 },
-      {
-        src: "/logos/monday.svg",
-        alt: "Monday logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/drive.svg",
-        alt: "Google Drive logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/jira.svg",
-        alt: "Jira logo",
-        width: 48,
-        height: 48,
-      },
-      { src: "/logos/asana.svg", alt: "Asana logo", width: 48, height: 48 },
-    ],
-    className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 md:[&>.title-container]:translate-x-2 xl:[&>.title-container]:translate-x-4 [&>.title-container]:translate-x-0",
-    fade: [],
-  },
-];
-
-const bottomItems = [
-  {
-    title: "Portofolio yang menjual.",
-    description:
-      "Tampilkan layanan, hasil kerja, dan testimoni agar calon klien langsung paham value kamu.",
+      "Pilih paket (Starter/Growth/Scale) dan isi detail profil serta karya yang ingin ditampilkan.",
     images: [
       {
-        src: "/resource-allocation/graveyard.webp",
+        src: "/resource-allocation/pendaftaran.png",
         alt: "Tampilan portofolio digital",
         width: 305,
         height: 280,
       },
     ],
-    className:
-      "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+    className: "md:col-span-2",
+    fade: ["bottom"],
+  },
+];
+
+const bottomItems = [
+  {
+    title: "Selesaikan Pembayaran",
+    description:
+      "Lakukan transfer sesuai harga paket melalui BRI atau QRIS DANA yang tersedia di akhir form.",
+    images: [
+      {
+        src: "/resource-allocation/pembayaran.png",
+        alt: "Tampilan portofolio digital",
+        width: 305,
+        height: 280,
+      },
+    ],
+    className: "",
     fade: ["bottom"],
   },
   {
-    title: "Proses kerja transparan.",
+    title: "Submit & Simpan Bukti",
     description:
-      "Progress, revisi, dan milestone jelas dari awal sampai produk live.",
+      "Setelah kirim form, Anda akan menerima pesan konfirmasi bahwa data telah masuk ke sistem kami.",
     images: [
       {
-        src: "/resource-allocation/discussions.png",
+        src: "/resource-allocation/submit.png",
         alt: "Tampilan diskusi proyek",
         width: 320,
         height: 103,
       },
     ],
-    className:
-      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-0 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
+    className: "",
     fade: [""],
   },
   {
-    title: "Siap dikembangkan jangka panjang.",
+    title: "Konfirmasi ke WhatsApp",
     description:
-      "Arsitektur dan kode disiapkan agar mudah dikembangkan seiring pertumbuhan bisnis.",
+      "Klik link WhatsApp di halaman akhir untuk chat admin agar pesanan Anda langsung diprioritaskan.",
     images: [
       {
-        src: "/resource-allocation/notifications.webp",
+        src: "/resource-allocation/konfirmasi.png",
         alt: "Tampilan notifikasi sistem",
         width: 305,
         height: 280,
       },
     ],
-    className:
-      "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+    className: "",
     fade: ["bottom"],
   },
 ];
 
 export const ResourceAllocation = () => {
   return (
-    <section
-      id="resource-allocation"
-      className="overflow-hidden pb-28 lg:pb-32"
-    >
-      <div className="">
-        <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
+    <section className="py-24 overflow-hidden bg-[#FFFDF5]">
+      <div className="container px-4 mx-auto">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl mb-16">
           5 Langkah Mudah Miliki Website Portofolio
         </h2>
 
-        <div className="mt-8 md:mt-12 lg:mt-20">
-          <DashedLine
-            orientation="horizontal"
-            className="container scale-x-105"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-5 border border-dashed border-gray-300 rounded-3xl overflow-hidden bg-white/50 backdrop-blur-sm shadow-sm">
+          {/* Top Row: 2 items with 3:2 ratio */}
+          {topItems.map((item, i) => (
+            <Item key={`top-${i}`} item={item} isLast={i === topItems.length - 1 && bottomItems.length === 0} />
+          ))}
 
-          {/* Top Features Grid - 2 items */}
-          <div className="relative container flex max-md:flex-col">
-            {topItems.map((item, i) => (
-              <Item key={i} item={item} isLast={i === topItems.length - 1} />
-            ))}
-          </div>
-          <DashedLine
-            orientation="horizontal"
-            className="container max-w-7xl scale-x-110"
-          />
-
-          {/* Bottom Features Grid - 3 items */}
-          <div className="relative container grid max-w-7xl md:grid-cols-3">
-            {bottomItems.map((item, i) => (
-              <Item
-                key={i}
-                item={item}
-                isLast={i === bottomItems.length - 1}
-                className="md:pb-0"
-              />
-            ))}
-          </div>
+          {/* Bottom Row: 3 items equally spaced */}
+          {bottomItems.map((item, i) => (
+            <Item 
+              key={`bottom-${i}`} 
+              item={item} 
+              isLast={i === bottomItems.length - 1} 
+              className="md:col-span-1 border-t border-dashed border-gray-300 md:border-t-0 lg:border-t"
+            />
+          ))}
         </div>
-        <DashedLine
-          orientation="horizontal"
-          className="container max-w-7xl scale-x-110"
-        />
       </div>
     </section>
   );
@@ -171,87 +122,37 @@ const Item = ({ item, isLast, className }: ItemProps) => {
   return (
     <div
       className={cn(
-        "relative flex flex-col justify-between px-0 py-6 md:px-6 md:py-8",
+        "relative flex flex-col p-8 md:p-10 border-b border-dashed border-gray-300 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0",
         className,
         item.className,
       )}
     >
-      <div className="title-container text-balance">
-        <h3 className="inline font-semibold">{item.title} </h3>
-        <span className="text-muted-foreground"> {item.description}</span>
+      <div className="mb-8 space-y-3">
+        <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          {item.description}
+        </p>
       </div>
 
-      {item.fade.includes("bottom") && (
-        <div className="from-muted/80 absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent md:hidden" />
-      )}
-      {item.images.length > 4 ? (
-        <div className="relative overflow-hidden">
-          <div className="flex flex-col gap-5">
-            {/* First row - right aligned */}
-            <div className="flex translate-x-4 justify-end gap-5">
-              {item.images.slice(0, 4).map((image, j) => (
-                <div
-                  key={j}
-                  className="bg-background grid aspect-square size-16 place-items-center rounded-2xl p-2 lg:size-20"
-                >
-                  <Image
-                    src={withBasePath(image.src)}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="object-contain object-left-top"
-                  />
-                  <div className="from-muted/80 absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l to-transparent" />
-                </div>
-              ))}
-            </div>
-            {/* Second row - left aligned */}
-            <div className="flex -translate-x-4 gap-5">
-              {item.images.slice(4).map((image, j) => (
-                <div
-                  key={j}
-                  className="bg-background grid aspect-square size-16 place-items-center rounded-2xl lg:size-20"
-                >
-                  <Image
-                    src={withBasePath(image.src)}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    className="object-contain object-left-top"
-                  />
-                  <div className="from-muted absolute inset-y-0 bottom-0 left-0 z-10 w-14 bg-linear-to-r to-transparent" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="image-container grid grid-cols-1 gap-4">
-          {item.images.map((image, j) => (
+      <div className="mt-auto relative flex items-center justify-center min-h-[160px]">
+        {item.images.map((image, j) => (
+          <div key={j} className="relative group transition-transform duration-500 hover:scale-105">
             <Image
-              key={j}
               src={withBasePath(image.src)}
               alt={image.alt}
               width={image.width}
               height={image.height}
-              className="object-contain object-left-top"
+              className={cn(
+                "object-contain max-h-[180px] w-auto drop-shadow-xl rounded-lg border border-gray-100 bg-white p-1",
+                item.title.includes("Submit") ? "max-h-[100px]" : ""
+              )}
             />
-          ))}
-        </div>
-      )}
-
-      {!isLast && (
-        <>
-          <DashedLine
-            orientation="vertical"
-            className="absolute top-0 right-0 max-md:hidden"
-          />
-          <DashedLine
-            orientation="horizontal"
-            className="absolute inset-x-0 bottom-0 md:hidden"
-          />
-        </>
-      )}
+            {item.fade.includes("bottom") && (
+              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent pointer-events-none" />
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
