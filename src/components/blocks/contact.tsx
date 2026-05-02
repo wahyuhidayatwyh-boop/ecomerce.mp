@@ -97,25 +97,27 @@ export default function Contact() {
               <div className="h-px flex-1 bg-border" />
             </div>
             
-            <Button asChild className="w-full h-12 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-xl font-bold gap-2 shadow-lg shadow-green-500/20">
+            <Button asChild className="w-full h-12 md:h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-xl font-bold gap-2 shadow-lg shadow-green-500/20 transition-all active:scale-95">
               <Link
                 href="https://wa.me/6283843653251?text=Halo%20Admin%20MyPortofolio!%20%F0%9F%91%8B%20Saya%20baru%20saja%20melihat%20website%20kakak%20dan%20tertarik%20ingin%20buat%20portofolio%20juga.%20Boleh%20tanya-tanya%20dulu%20soal%20prosedurnya%3F"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center justify-center px-2 text-[13px] md:text-base text-center"
               >
-                <MessageCircle className="size-5" />
-                Konsultasi dengan Admin via WhatsApp
+                <MessageCircle className="size-5 shrink-0" />
+                <span>Konsultasi Admin via WhatsApp</span>
               </Link>
             </Button>
 
-            <Button asChild className="w-full h-12 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-bold gap-2 shadow-lg shadow-gray-500/10 transition-all">
+            <Button asChild className="w-full h-12 md:h-14 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-bold gap-2 shadow-lg shadow-gray-500/10 transition-all active:scale-95">
               <Link
                 href="https://bit.ly/datamyportofolioid"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center justify-center px-2 text-[13px] md:text-base text-center"
               >
-                <ClipboardList className="size-5" />
-                Isi Formulir Pendaftaran & Data
+                <ClipboardList className="size-5 shrink-0" />
+                <span>Isi Formulir Pendaftaran & Data</span>
               </Link>
             </Button>
           </div>
