@@ -88,10 +88,11 @@
   --ring: oklch(0.7 0 0);
   --bg-gradient-from: oklch(0.98 0 0 / 40%);
   --bg-gradient-via: oklch(0.2 0 0 / 30%);
+  --background: oklch(0.1 0 0);
 
   --chart-1: oklch(0.98 0 0);
   --chart-2: oklch(0.7 0 0);
-  --chart-3: oklch(0.5 0 0);
+  --chart-3: oklch(41.103% 0.00265 16.295);
   --chart-4: oklch(0.3 0 0);
   --chart-5: oklch(0.2 0 0);
 

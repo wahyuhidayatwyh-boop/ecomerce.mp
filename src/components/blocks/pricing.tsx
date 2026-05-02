@@ -58,17 +58,17 @@ const tiers = [
 
 export function Pricing({ className }: { className?: string }) {
   return (
-    <section className={cn("bg-[#FFFDF5] py-24 sm:py-32 relative overflow-hidden", className)}>
+    <section className={cn("bg-[#FFFDF5] dark:bg-transparent py-24 sm:py-32 relative overflow-hidden transition-colors duration-500", className)}>
       {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 z-0 opacity-20" 
+      <div className="absolute inset-0 z-0 opacity-20 dark:opacity-10" 
            style={{ backgroundImage: 'radial-gradient(#A67C52 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
       
       <div className="container relative z-10 mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center space-y-6">
-          <h2 className="font-display text-2xl tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100 md:text-4xl lg:text-5xl">
             Paket Website Portofolio Profesional
           </h2>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 font-sans md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400 font-sans md:text-xl">
             Solusi portofolio modern, cepat, dan responsif untuk meningkatkan personal branding Anda di hadapan klien.
           </p>
         </div>
@@ -78,7 +78,7 @@ export function Pricing({ className }: { className?: string }) {
             <div
               key={tier.name}
               className={cn(
-                "group relative flex flex-col justify-between rounded-[2rem] bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-all duration-500 ease-out hover:shadow-[0_20px_50px_rgba(166,124,82,0.1)]",
+                "group relative flex flex-col justify-between rounded-[2rem] bg-white dark:bg-zinc-900/50 p-8 ring-1 ring-gray-200 dark:ring-zinc-800 xl:p-10 transition-all duration-500 ease-out hover:shadow-[0_20px_50px_rgba(166,124,82,0.1)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]",
                 tier.highlighted ? "lg:z-10 ring-2 ring-[#A67C52] lg:scale-105" : "lg:mt-8"
               )}
             >
@@ -90,7 +90,7 @@ export function Pricing({ className }: { className?: string }) {
               
               <div>
                 <div className="flex items-center justify-between gap-x-4">
-                  <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900">
+                  <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-zinc-100">
                     {tier.name}
                   </h3>
                 </div>
@@ -101,17 +101,17 @@ export function Pricing({ className }: { className?: string }) {
                   </span>
                 </div>
                 
-                <p className="mt-2 text-xs text-gray-500 italic">
+                <p className="mt-2 text-xs text-gray-500 dark:text-zinc-400 italic">
                   {tier.description}
                 </p>
 
-                <div className="mt-6 h-px bg-gray-100" />
+                <div className="mt-6 h-px bg-gray-100 dark:bg-zinc-800" />
 
                 <div className="mt-6 space-y-6">
                   {/* Kapasitas Proyek */}
                   <div>
-                    <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Kapasitas Proyek</h4>
-                    <ul className="space-y-2 text-sm leading-6 text-gray-600">
+                    <h4 className="text-[10px] font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-widest mb-3">Kapasitas Proyek</h4>
+                    <ul className="space-y-2 text-sm leading-6 text-gray-600 dark:text-zinc-400">
                       <li className="flex gap-x-3 items-start">
                         <Check className="h-4 w-4 mt-1 text-[#A67C52] shrink-0" aria-hidden="true" />
                         <span>{tier.features.find(f => f.includes("Halaman"))}</span>
@@ -131,8 +131,8 @@ export function Pricing({ className }: { className?: string }) {
 
                   {/* Fitur Utama */}
                   <div>
-                    <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Fitur Utama</h4>
-                    <ul className="space-y-2 text-sm leading-6 text-gray-600">
+                    <h4 className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">Fitur Utama</h4>
+                    <ul className="space-y-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
                       {tier.name === "Starter" && (
                         <>
                           <li className="flex gap-x-3 items-start">
@@ -171,7 +171,7 @@ export function Pricing({ className }: { className?: string }) {
                       )}
                       <li className="flex gap-x-3 items-start">
                         <Check className="h-4 w-4 mt-1 text-[#A67C52] shrink-0" aria-hidden="true" />
-                        <span className="font-medium text-gray-900">
+                        <span className="font-medium text-gray-900 dark:text-zinc-100">
                           {tier.name === "Scale" ? "Domain Premium & Hosting" : "Hosting Gratis (Vercel/Netlify)"}
                         </span>
                       </li>
@@ -180,8 +180,8 @@ export function Pricing({ className }: { className?: string }) {
 
                   {/* Dukungan */}
                   <div>
-                    <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Dukungan</h4>
-                    <ul className="space-y-2 text-sm leading-6 text-gray-600">
+                    <h4 className="text-[10px] font-bold text-gray-400 dark:text-zinc-500 uppercase tracking-widest mb-3">Dukungan</h4>
+                    <ul className="space-y-2 text-sm leading-6 text-gray-600 dark:text-zinc-400">
                       <li className="flex gap-x-3 items-start">
                         <Check className="h-4 w-4 mt-1 text-[#A67C52] shrink-0" aria-hidden="true" />
                         <span>Support {tier.features.find(f => f.includes("Masa Support"))?.split("Masa Support ")[1]}</span>
@@ -215,7 +215,7 @@ export function Pricing({ className }: { className?: string }) {
                   "mt-10 w-full h-14 rounded-xl text-base font-bold transition-all duration-300 active:scale-95",
                   tier.highlighted 
                     ? "bg-[#A67C52] text-white hover:bg-[#8B5E3C] shadow-[0_10px_20px_-5px_rgba(166,124,82,0.4)]" 
-                    : "bg-white border-2 border-[#A67C52] text-[#A67C52] hover:bg-[#A67C52] hover:text-white"
+                    : "bg-white dark:bg-zinc-800/50 border-2 border-[#A67C52] text-[#A67C52] hover:bg-[#A67C52] hover:text-white"
                 )}
               >
                 <a 
