@@ -212,7 +212,7 @@ export function Pricing({ className }: { className?: string }) {
               <Button
                 asChild
                 className={cn(
-                  "mt-10 w-full h-12 md:h-14 rounded-xl text-base font-bold transition-all duration-300 active:scale-95 gap-2",
+                  "mt-10 w-full h-12 md:h-14 rounded-xl text-sm md:text-base font-bold transition-all duration-300 active:scale-95 gap-2 px-4",
                   tier.highlighted 
                     ? "bg-[#A67C52] text-white hover:bg-[#8B5E3C] shadow-[0_10px_20px_-5px_rgba(166,124,82,0.4)]" 
                     : "bg-white dark:bg-zinc-800/50 border-2 border-[#A67C52] text-[#A67C52] hover:bg-[#A67C52] hover:text-white shadow-sm"
