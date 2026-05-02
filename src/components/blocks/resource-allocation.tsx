@@ -11,7 +11,7 @@ const topItems = [
       "Proses produksi lebih cepat dengan struktur halaman yang sudah teruji.",
     images: [
       {
-        src: "/resource-allocation/templates.webp",
+        src: "/resource-allocation/templates.png",
         alt: "Antarmuka template proyek",
         width: 495,
         height: 186,
@@ -84,7 +84,7 @@ const bottomItems = [
       "Progress, revisi, dan milestone jelas dari awal sampai produk live.",
     images: [
       {
-        src: "/resource-allocation/discussions.webp",
+        src: "/resource-allocation/discussions.png",
         alt: "Tampilan diskusi proyek",
         width: 320,
         height: 103,
