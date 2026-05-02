@@ -9,10 +9,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  output: "export",
-  trailingSlash: true,
-  basePath: isProd ? `/${repoName}` : undefined,
-  assetPrefix: isProd ? `/${repoName}/` : undefined,
+  // output: "export", // Hapus atau comment baris ini untuk Netlify agar Server Actions bisa jalan
 };
 const withMDX = createMDX({
   options: {
