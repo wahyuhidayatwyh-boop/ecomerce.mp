@@ -32,7 +32,7 @@ const portfolioItems = [
     category: "Website Portofolio Pribadi ",
     code: "MP-04",
     image: "/about/portofolio5.png",
-    previewUrl: "https://yuliarahmanpasaribu-8a4y8jfwz-2311102178-3240s-projects.vercel.app/",
+    previewUrl: "https://yuliarahmanpasaribu.vercel.app/",
   },
   {
     title: "Portofolio UI Designer",
