@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 
@@ -23,19 +23,19 @@ import { cn, withBasePath } from "@/lib/utils";
 const ITEMS = [
   {
     label: "Portofolio",
-    href: "/#feature-modern-teams",
+    href: "/portfolio",
     dropdownItems: [
       {
-        title: "Portofolio Personal Brand",
-        href: "/#feature-modern-teams",
+        title: "Katalog Lengkap",
+        href: "/portfolio",
         description:
-          "Tampilkan profil, keahlian, dan karya kamu dengan tampilan profesional.",
+          "Lihat semua koleksi desain portofolio kami yang siap pakai.",
       },
       {
-        title: "Portofolio Bisnis & Agensi",
-        href: "/#resource-allocation",
+        title: "Portofolio Personal Brand",
+        href: "/portfolio#personal",
         description:
-          "Susun studi kasus, layanan, dan testimoni agar calon klien lebih yakin.",
+          "Tampilkan profil, keahlian, dan karya kamu dengan tampilan profesional.",
       },
     ],
   },

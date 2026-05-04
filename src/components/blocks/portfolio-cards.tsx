@@ -1,9 +1,12 @@
-import Image from "next/image";
+"use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { withBasePath } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { cn, withBasePath } from "@/lib/utils";
 
 const portfolioItems = [
   {
@@ -48,9 +51,32 @@ const portfolioItems = [
     image: "/about/portofolio6.png",
     previewUrl: "https://rizkywassyifa.vercel.app/",
   },
+  {
+    title: "Creative Portfolio Pink",
+    category: "Creative & Student",
+    code: "MP-07",
+    image: "/about/portofolio8.png",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/portopink",
+  },
 ];
 
+const ITEMS_PER_PAGE = 6;
+
 export function PortfolioCards() {
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const totalPages = Math.ceil(portfolioItems.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentItems = portfolioItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    const section = document.getElementById("portfolio");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="portfolio" className="pb-28 lg:pb-32">
       <div className="container">
@@ -64,7 +90,7 @@ export function PortfolioCards() {
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {portfolioItems.map((item) => (
+          {currentItems.map((item) => (
             <a
               key={item.code}
               href={item.previewUrl}
@@ -104,7 +130,50 @@ export function PortfolioCards() {
             </a>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex items-center justify-center gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              disabled={currentPage === 1}
+              onClick={() => goToPage(currentPage - 1)}
+              className="rounded-xl border-border"
+            >
+              <ChevronLeft className="size-4" />
+              <span className="sr-only">Halaman Sebelumnya</span>
+            </Button>
+            
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                variant={currentPage === page ? "default" : "outline"}
+                size="icon"
+                onClick={() => goToPage(page)}
+                className={cn(
+                  "rounded-xl border-border w-10 h-10 font-bold",
+                  currentPage === page ? "bg-[#A67C52] hover:bg-[#8B6543] text-white" : ""
+                )}
+              >
+                {page}
+              </Button>
+            ))}
+
+            <Button
+              variant="outline"
+              size="icon"
+              disabled={currentPage === totalPages}
+              onClick={() => goToPage(currentPage + 1)}
+              className="rounded-xl border-border"
+            >
+              <ChevronRight className="size-4" />
+              <span className="sr-only">Halaman Selanjutnya</span>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
 }
+
