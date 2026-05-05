@@ -58,6 +58,13 @@ const portfolioItems = [
     image: "/about/portofolio8.png",
     previewUrl: "https://wahyuhidayatwyh-boop.github.io/portopink",
   },
+   {
+    title: "Portofolio Fotografer",
+    category: "Creative & Student",
+    code: "MP-08",
+    image: "/about/MP-8.PNG",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio-MP-8/",
+  },
 ];
 
 const ITEMS_PER_PAGE = 6;
