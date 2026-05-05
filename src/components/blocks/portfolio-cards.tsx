@@ -62,7 +62,7 @@ const portfolioItems = [
     title: "Portofolio Fotografer",
     category: "Creative & Student",
     code: "MP-08",
-    image: "/about/MP-8.PNG",
+    image: "/about/MP-8.png",
     previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio-MP-8/",
   },
 ];
