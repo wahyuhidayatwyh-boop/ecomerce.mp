@@ -1,7 +1,7 @@
-﻿import { Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
@@ -61,44 +61,64 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#A67C52",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://wahyuhidayatwyh-boop.github.io/ecomerce.mp/"),
+  metadataBase: new URL("https://myportofolio.store"),
   title: {
-    default: "My Portofolio - Jasa Website Portofolio Profesional",
+    default: "My Portofolio - Jasa Website Portofolio & Web Developer Indonesia",
     template: "%s | My Portofolio",
   },
   description:
-    "My Portofolio menyediakan jasa pembuatan website portofolio profesional untuk personal brand, freelancer, kreator, dan bisnis.",
+    "Jasa pembuatan website portofolio profesional untuk personal brand, freelancer, programmer, dan kreator. Website cepat, SEO friendly, dan desain premium.",
   keywords: [
+    "myportofolio",
+    "portofolio",
+    "portfolio web developer",
+    "portfolio programmer indonesia",
     "jasa website portofolio",
     "jasa bikin portofolio online",
     "website portofolio profesional",
     "jasa personal branding website",
-    "jasa website portofolio",
     "portfolio website indonesia",
   ],
-  authors: [{ name: "My Portofolio" }],
+  authors: [{ name: "My Portofolio", url: "https://myportofolio.store" }],
   creator: "My Portofolio",
   publisher: "My Portofolio",
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "48x48" },
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon/favicon.ico" },
     ],
     apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "My Portofolio - Jasa Website Portofolio Profesional",
+    type: "website",
+    locale: "id_ID",
+    url: "https://myportofolio.store",
+    title: "My Portofolio - Jasa Website Portofolio & Web Developer Indonesia",
     description:
-      "Website portofolio profesional untuk menampilkan karya, layanan, dan profil bisnis kamu.",
+      "Website portofolio profesional untuk menampilkan karya, layanan, dan profil bisnis kamu agar lebih dipercaya klien.",
     siteName: "My Portofolio",
     images: [
       {
@@ -111,11 +131,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "My Portofolio - Jasa Website Portofolio Profesional",
+    title: "My Portofolio - Jasa Website Portofolio & Web Developer Indonesia",
     description:
       "Website portofolio profesional untuk menampilkan karya, layanan, dan profil bisnis kamu.",
     images: ["/og-image.jpg"],
     creator: "@myportofolio",
+  },
+  verification: {
+    google: "google-site-verification-id",
   },
 };
 

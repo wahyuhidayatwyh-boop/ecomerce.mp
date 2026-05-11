@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Background } from "@/components/background";
 import { PortfolioCards } from "@/components/blocks/portfolio-cards";
+
+export const metadata: Metadata = {
+  title: "Katalog Portofolio",
+  description: "Lihat berbagai pilihan desain website portofolio premium untuk web developer, programmer, dan freelancer.",
+  alternates: {
+    canonical: "/portfolio",
+  },
+};
 
 export default function PortfolioPage() {
   return (
