@@ -65,6 +65,13 @@ const portfolioItems = [
     image: "/about/MP-8.png",
     previewUrl: "https://wahyuhidayatwyh-boop.github.io/portofolio-MP-8/",
   },
+   {
+    title: "Vintage Visual Portfolio",
+    category: "Vintage Cinematic",
+    code: "MP-09",
+    image: "/about/MP-9.png",
+    previewUrl: "https://wahyuhidayatwyh-boop.github.io/MP-09/",
+  },
 ];
 
 const ITEMS_PER_PAGE = 6;
