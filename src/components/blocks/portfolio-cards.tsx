@@ -69,7 +69,7 @@ const portfolioItems = [
     title: "Vintage Visual Portfolio",
     category: "Vintage Cinematic",
     code: "MP-09",
-    image: "/about/MP-9.png",
+    image: "/about/MP-09.png",
     previewUrl: "https://wahyuhidayatwyh-boop.github.io/MP-09/",
   },
 ];
